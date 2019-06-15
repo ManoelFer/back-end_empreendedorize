@@ -1,7 +1,6 @@
 package com.manoelneto.empreendedorize.ws.domain;
 
 
-import com.sun.javafx.beans.IDProperty;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.security.core.GrantedAuthority;
