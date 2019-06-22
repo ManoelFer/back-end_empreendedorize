@@ -1,9 +1,12 @@
 package com.manoelneto.empreendedorize.ws.dto;
 
 import com.manoelneto.empreendedorize.ws.domain.Plano;
+import com.manoelneto.empreendedorize.ws.domain.Role;
 import com.manoelneto.empreendedorize.ws.domain.User;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 public class PlanoDto implements Serializable {
     private static final long serialVersionUID = 1L;
@@ -14,6 +17,8 @@ public class PlanoDto implements Serializable {
     private String dataConclusao;
     private String finalidade;
 
+    private List<Role> roles = new ArrayList<>();
+
     public PlanoDto() {
     }
 
@@ -23,6 +28,7 @@ public class PlanoDto implements Serializable {
         this.nomePlano = plano.getNomePlano();
         this.dataConclusao = plano.getDataConclusao();
         this.finalidade = plano.getFinalidade();
+        this.roles = plano.getRoles();
     }
 
     public String getId() {
@@ -63,5 +69,13 @@ public class PlanoDto implements Serializable {
 
     public void setFinalidade(String finalidade) {
         this.finalidade = finalidade;
+    }
+
+    public List<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<Role> roles) {
+        this.roles = roles;
     }
 }
