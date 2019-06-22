@@ -78,4 +78,5 @@ public class PlanoDto implements Serializable {
     public void setRoles(List<Role> roles) {
         this.roles = roles;
     }
+    
 }
