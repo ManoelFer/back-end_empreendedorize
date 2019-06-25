@@ -26,8 +26,8 @@ public class SetupDataLoaderPlano implements ApplicationListener<ContextRefreshe
         planoRepository.deleteAll();
         roleRepository.deleteAll();
 
-        Role roleDono = createRoleIfNotFound("DONO");
-        Role roleConvidado = createRoleIfNotFound("CONVIDADO");
+        Role roleDono = createRoleIfNotFound("ROLE_DONO");
+        Role roleConvidado = createRoleIfNotFound("ROLE_CONVIDADO");
 
         Plano papelaria = new Plano(null,"Abrir papelaria","20/05/2020","Empreendedorismo");
         Plano acougue = new Plano(null,"Abrir açougue","20/05/2030","Empreendedorismo");
