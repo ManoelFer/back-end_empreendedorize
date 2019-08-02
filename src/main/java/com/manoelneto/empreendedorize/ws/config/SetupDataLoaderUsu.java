@@ -36,7 +36,7 @@ public class SetupDataLoaderUsu implements ApplicationListener<ContextRefreshedE
         Role roleAdmin = createRoleIfNotFound("ROLE_ADMIN");
         Role roleUser = createRoleIfNotFound("ROLE_USER");
 
-        User manoel = new User("06365448180", "Manoel", "Neto", "manoelfernandes15@gmail.com");
+        User manoel = new User("06365448180", "Manuzinho", "Neto", "manoelfernandes15@gmail.com");
         User joao = new User("06365448181", "João", "Neto", "joao@gmail.com");
 
         manoel.setRoles(Arrays.asList(roleAdmin));
