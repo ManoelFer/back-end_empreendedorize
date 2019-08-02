@@ -31,8 +31,6 @@ public class SetupDataLoaderUsu implements ApplicationListener<ContextRefreshedE
     @Override
     public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
 
-        userRepository.deleteAll();
-        roleRepository.deleteAll();
         verificationTokenRepository.deleteAll();
 
         Role roleAdmin = createRoleIfNotFound("ROLE_ADMIN");
