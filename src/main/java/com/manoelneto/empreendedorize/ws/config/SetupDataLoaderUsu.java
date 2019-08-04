@@ -38,13 +38,8 @@ public class SetupDataLoaderUsu implements ApplicationListener<ContextRefreshedE
         Role roleAdmin = createRoleIfNotFound("ROLE_ADMIN");
         Role roleUser = createRoleIfNotFound("ROLE_USER");
 
-        User manoel = new User("06365448180", "Manuzinho", "Neto", "manoelfernandes15@gmail.com");
         User heitor = new User("06365448181", "Heitor", "Neves", "heitor@gmail.com");
         User juam = new User("06365448181", "Juam", "Neto", "juam@gmail.com");
-
-        manoel.setRoles(Arrays.asList(roleAdmin));
-        manoel.setPassword(passwordEncoder.encode("87654321"));
-        manoel.setEnabled(true);
 
         heitor.setRoles(Arrays.asList(roleAdmin));
         heitor.setPassword(passwordEncoder.encode("123"));
@@ -54,7 +49,6 @@ public class SetupDataLoaderUsu implements ApplicationListener<ContextRefreshedE
         juam.setPassword(passwordEncoder.encode("123"));
         juam.setEnabled(true);
 
-        createUserIfNotFound(manoel);
         createUserIfNotFound(heitor);
         createUserIfNotFound(juam);
     }
