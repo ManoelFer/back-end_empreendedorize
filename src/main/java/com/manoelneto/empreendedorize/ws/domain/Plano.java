@@ -17,7 +17,10 @@ public class Plano implements Serializable {
 
     @Id
     private String id;
+
+    @DBRef (lazy = true)
     private User usu;
+
     private String nomePlano;
     private String dataConclusao;
     private String finalidade;

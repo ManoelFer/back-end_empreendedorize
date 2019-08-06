@@ -1,6 +1,7 @@
 package com.manoelneto.empreendedorize.ws.services;
 
 import com.manoelneto.empreendedorize.ws.domain.Plano;
+import com.manoelneto.empreendedorize.ws.domain.User;
 import com.manoelneto.empreendedorize.ws.dto.PlanoDto;
 import com.manoelneto.empreendedorize.ws.repository.PlanoRepository;
 import com.manoelneto.empreendedorize.ws.services.exception.ObjectNotFoundException;
@@ -16,8 +17,8 @@ public class PlanoService {
     @Autowired
     private PlanoRepository planoRepository;
 
-    public List<Plano> findAll() {
-        return planoRepository.findAll();
+    public List<Plano> findAll(User user) {
+        return planoRepository.getPlanoByUsu(user);
     }
 
     public Plano findByID(String id){
