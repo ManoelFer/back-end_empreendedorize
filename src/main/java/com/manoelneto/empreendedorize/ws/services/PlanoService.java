@@ -15,19 +15,17 @@ import java.util.Optional;
 public class PlanoService {
 
     @Autowired
-    private PlanoRepository planoRepository;
-
-    public List<Plano> findAll(User user) {
+        private PlanoRepository planoRepository;
+        public List<Plano> findAll(User user) {
         return planoRepository.getPlanoByUsu(user);
     }
-
-    public Plano findByID(String id){
+        public Plano findByID(String id){
         Optional<Plano> user = planoRepository.findById(id);
         return user.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado!"));
     }
 
     public Plano create(Plano plano){
-        return planoRepository.save(plano);
+            return planoRepository.save(plano);
     }
 
     public Plano fromDTO(PlanoDto planoDto){ return new Plano(planoDto); }

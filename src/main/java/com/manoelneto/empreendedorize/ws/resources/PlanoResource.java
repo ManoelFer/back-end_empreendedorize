@@ -26,7 +26,7 @@ public class PlanoResource {
     @Autowired
     PlanoService planoService;
 
-    @GetMapping("/planos")
+    @GetMapping("/registration/planos")
     public ResponseEntity<List<PlanoDto>> findAll(Principal principal) {
         User user = this.userService.findByEmail(principal.getName());
         List<Plano> planos = planoService.findAll(user);
@@ -41,7 +41,9 @@ public class PlanoResource {
     }
 
     @PostMapping("/planos")
-    public ResponseEntity<PlanoDto> create(@RequestBody PlanoDto planoDto){
+    public ResponseEntity<PlanoDto> create(@RequestBody PlanoDto planoDto, Principal principal){
+        User user = this.userService.findByEmail(principal.getName());
+        planoDto.setUsu(user);
         Plano plano = planoService.fromDTO(planoDto);
         return  ResponseEntity.ok().body(new PlanoDto(planoService.create(plano)));
     }
