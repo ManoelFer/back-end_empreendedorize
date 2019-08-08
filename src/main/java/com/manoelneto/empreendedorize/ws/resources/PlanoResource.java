@@ -26,7 +26,7 @@ public class PlanoResource {
     @Autowired
     PlanoService planoService;
 
-    @GetMapping("/registration/planos")
+    @GetMapping("/planos")
     public ResponseEntity<List<PlanoDto>> findAll(Principal principal) {
         User user = this.userService.findByEmail(principal.getName());
         List<Plano> planos = planoService.findAll(user);
