@@ -32,7 +32,7 @@ public class PlanoService {
 
     public Plano update(Plano plano) {
         Optional<Plano> updatePlano = planoRepository.findById(plano.getId());
-        return updatePlano.map(u -> planoRepository.save(new Plano(plano.getUsu(),plano.getNomePlano(),plano.getDataConclusao(),plano.getFinalidade())))
+        return updatePlano.map(u -> planoRepository.save(new Plano(plano.getId(), plano.getUsu(), plano.getNomePlano(), plano.getDataConclusao(), plano.getFinalidade())))
                 .orElseThrow(() -> new ObjectNotFoundException("Plano não encontrado!"));
     }
 

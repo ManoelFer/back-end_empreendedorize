@@ -37,12 +37,29 @@ public class Plano implements Serializable {
         this.finalidade = finalidade;
     }
 
+    public Plano(String id, User usu, String nomePlano, String dataConclusao, String finalidade) {
+        this.id = id;
+        this.usu = usu;
+        this.nomePlano = nomePlano;
+        this.dataConclusao = dataConclusao;
+        this.finalidade = finalidade;
+    }
+
     public Plano(PlanoDto planoDto){
         this.id = planoDto.getId();
         this.usu = planoDto.getUsu();
         this.nomePlano = planoDto.getNomePlano();
         this.dataConclusao = planoDto.getDataConclusao();
         this.finalidade = planoDto.getFinalidade();
+    }
+
+    public Plano(Plano plano){
+        super();
+        this.id = plano.getId();
+        this.usu = plano.getUsu();
+        this.nomePlano = plano.getNomePlano();
+        this.dataConclusao = plano.getDataConclusao();
+        this.finalidade = plano.getFinalidade();
     }
 
     public String getId() {

@@ -49,8 +49,8 @@ public class PlanoResource {
     }
 
     @PutMapping("/planos/{id}")
-    public ResponseEntity<PlanoDto> update(@PathVariable String id, @RequestBody PlanoDto planoDto) {
-        Plano plano = planoService.fromDTO(planoDto);
+    public ResponseEntity<PlanoDto> update(@PathVariable String id, @RequestBody PlanoDto PlanoDto) {
+        Plano plano = planoService.fromDTO(PlanoDto);
         plano.setId(id);
         return ResponseEntity.ok().body(new PlanoDto(planoService.update(plano)));
     }
