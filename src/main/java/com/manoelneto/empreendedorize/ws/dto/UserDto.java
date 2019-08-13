@@ -16,12 +16,13 @@ public class UserDto implements Serializable {
     private String  sobrenomeusu;
     private String fone1;
     private String fone2;
-    private String email;
     private String password;
+    private String email;
     private String endereco;
     private String cidade;
     private String estado;
     private String curriculo;
+
     private boolean enabled;
 
     private List<Role> roles = new ArrayList<>();
@@ -41,7 +42,7 @@ public class UserDto implements Serializable {
      this.estado = user.getEstado();
      this.curriculo = user.getCurriculo();
      this.enabled = user.isEnabled();
-     this.roles  = user.getRoles();
+     this.roles = user.getRoles();
     }
 
     public String getId() {
@@ -92,20 +93,20 @@ public class UserDto implements Serializable {
         this.fone2 = fone2;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public String getPassword() {
         return password;
     }
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getEndereco() {

@@ -73,6 +73,7 @@ public class User implements Serializable {
         this.fone1 = userDto.getFone1();
         this.fone2 = userDto.getFone2();
         this.email = userDto.getEmail();
+        this.password = userDto.getPassword();
         this.endereco = userDto.getEndereco();
         this.cidade = userDto.getCidade();
         this.estado = userDto.getEstado();
