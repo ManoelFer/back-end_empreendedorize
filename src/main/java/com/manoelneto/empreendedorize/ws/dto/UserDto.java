@@ -14,8 +14,14 @@ public class UserDto implements Serializable {
     private String cpf;
     private String nomeusu;
     private String  sobrenomeusu;
+    private String fone1;
+    private String fone2;
     private String email;
     private String password;
+    private String endereco;
+    private String cidade;
+    private String estado;
+    private String curriculo;
     private boolean enabled;
 
     private List<Role> roles = new ArrayList<>();
@@ -27,7 +33,13 @@ public class UserDto implements Serializable {
      this.cpf = user.getCpf();
      this.nomeusu = user.getNomeusu();
      this.sobrenomeusu = user.getSobrenomeusu();
+     this.fone1 = user.getFone1();
+     this.fone2 = user.getFone2();
      this.email = user.getEmail();
+     this.endereco = user.getEndereco();
+     this.cidade = user.getCidade();
+     this.estado = user.getEstado();
+     this.curriculo = user.getCurriculo();
      this.enabled = user.isEnabled();
      this.roles  = user.getRoles();
     }
@@ -64,6 +76,22 @@ public class UserDto implements Serializable {
         this.sobrenomeusu = sobrenomeusu;
     }
 
+    public String getFone1() {
+        return fone1;
+    }
+
+    public void setFone1(String fone1) {
+        this.fone1 = fone1;
+    }
+
+    public String getFone2() {
+        return fone2;
+    }
+
+    public void setFone2(String fone2) {
+        this.fone2 = fone2;
+    }
+
     public String getEmail() {
         return email;
     }
@@ -72,16 +100,48 @@ public class UserDto implements Serializable {
         this.email = email;
     }
 
-    public boolean isEnabled() {
-        return enabled;
-    }
-
     public String getPassword() {
         return password;
     }
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public String getCurriculo() {
+        return curriculo;
+    }
+
+    public void setCurriculo(String curriculo) {
+        this.curriculo = curriculo;
+    }
+
+    public boolean isEnabled() {
+        return enabled;
     }
 
     public void setEnabled(boolean enabled) {
