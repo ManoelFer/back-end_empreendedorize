@@ -72,7 +72,7 @@ public class UserService {
         user = create(user);
         try{this.emailService.sendConfirmationHtmlEmail(user, null);
         }catch (Exception e){
-            throw new Exception("Falha ao enviar e-mail");
+            throw new Exception(e.getMessage());
         }
         return user;
     }
