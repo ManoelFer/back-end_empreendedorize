@@ -63,14 +63,17 @@ public class UserService {
         userRepository.deleteById(id);
     }
 
-    public User registerUser(User user){
+    public User registerUser(User user) throws Exception{
         if(emailExist((user.getEmail()))){
             throw new ObjectAlreadyExistException((String.format("Já existe uma conta com esse endereço de email")));
         }
         user.setRoles(Arrays.asList(roleRepository.findByName("ROLE_USER").get()));
         user.setEnabled(false);
         user = create(user);
-        this.emailService.sendConfirmationHtmlEmail(user, null);
+        try{this.emailService.sendConfirmationHtmlEmail(user, null);
+        }catch (Exception e){
+            throw new Exception("Falha ao enviar e-mail");
+        }
         return user;
     }
 

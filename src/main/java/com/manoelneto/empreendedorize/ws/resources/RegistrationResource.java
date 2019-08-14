@@ -21,7 +21,11 @@ public class RegistrationResource {
     public ResponseEntity<Void> registerUser(@RequestBody UserDto userDto){
 
         User user = this.userService.fromDTO(userDto);
-        this.userService.registerUser(user);
+        try {
+            this.userService.registerUser(user);
+        } catch (Exception e) {
+            return new ResponseEntity(e,HttpStatus.BAD_GATEWAY) ;
+        }
         return ResponseEntity.noContent().build();
     }
 
